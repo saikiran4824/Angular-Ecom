@@ -1,0 +1,67 @@
+<div class="container mx-auto p-2">
+  <!-- Heading -->
+  <div class="text-center  p-2">
+      <span class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
+          Products List
+      </span>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+      @for (item of productList; track 'productId') {
+      <div class="shadow-lg rounded-2xl overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+           style="background: radial-gradient(circle, #6a11cb 0%, #2575fc 100%); color: white;">
+          <div class="relative">
+              <img class="w-full h-60 object-cover rounded-t-2xl appLazyImage"
+                   [attr.src]="item.productImageUrl"
+                   [attr.data-src]="item.productImageUrl"
+                   alt="Product Image"
+                   loading="lazy">
+          </div>
+
+          <div class="p-2">
+              <div class="flex justify-between items-center">
+                  <h5 class="text-lg font-semibold truncate" title="{{ item.productShortName }}">
+                      {{ item.productName }}
+                  </h5>
+                  <p class="text-xl font-bold text-yellow-300">
+                      ${{ item.productPrice }}
+                  </p>
+              </div>
+
+              <div class="flex justify-between items-center mt-2">
+                  <span class="text-base">Category:</span>
+                  <span class="text-sm font-medium text-white">
+                      {{ item.categoryName }}
+                  </span>
+              </div>
+              <div class="flex justify-between items-center">
+                <p class="font-medium">Delivery Time:</p>
+                <p class="text-lg font-bold text-gray-200">
+                    {{ item.deliveryTimeSpan }}
+                </p>
+            </div>
+
+              <div class="flex items-center my-2 space-x-1">
+                  <span class="text-yellow-400"><i class="fa-solid fa-star"></i></span>
+                  <span class="text-yellow-400"><i class="fa-solid fa-star"></i></span>
+                  <span class="text-yellow-400"><i class="fa-solid fa-star"></i></span>
+                  <span class="text-yellow-400"><i class="fa-solid fa-star"></i></span>
+                  <span class="text-yellow-400"><i class="fa-solid fa-star-half-stroke"></i></span>
+                  <span class="text-gray-300 text-sm">(45)</span>
+              </div>
+
+
+
+              <div class="flex justify-end mt-2">
+                <button class="bg-gradient-to-r from-green-500 to-green-900
+                               text-white font-semibold px-5 py-1 rounded-xl transition-all duration-300
+                               flex items-center gap-3 shadow-md hover:shadow-xl transform hover:scale-105"  (click)="addToCart(item.productImageUrl)">
+                    <i class="fa-solid fa-cart-plus"></i> Add to Cart ({{ item.quantity || 0 }})
+                </button>
+            </div>
+
+          </div>
+      </div>
+      }
+  </div>
+</div>
