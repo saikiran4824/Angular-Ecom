@@ -1,0 +1,21 @@
+.text-gradient {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shadow-lg {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.text-warning {
+  color: #ffc107 !important;
+}

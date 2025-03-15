@@ -1,18 +1,15 @@
 <header>
-  <nav class="relative bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 shadow-lg">
-    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-        <div href="#" class="text-3xl font-extrabold text-white tracking-wide drop-shadow-lg">
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-orange-200 to-red-300">
-                Quick Shopping
-          </span>
-        </div>
+  <nav class="navbar navbar-expand-lg shadow-lg" style="background: linear-gradient(to right, #ef4444, #ec4899, #8b5cf6);">
+    <div class="container d-flex justify-content-between align-items-center py-2">
+      <a href="#" class="navbar-brand text-white fw-bold fs-3 text-shadow">
+        <span style="background: linear-gradient(to right, #fde047, #fbbf24, #f87171);
+                     -webkit-background-clip: text;
+                     -webkit-text-fill-color: transparent;">
+          Quick Ecommerce Shopping
+        </span>
+      </a>
     </div>
-</nav>
+  </nav>
 </header>
-
-<div class="container">
-    <router-outlet></router-outlet>
-</div>
-<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-
+<app-product-list></app-product-list>
 

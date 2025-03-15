@@ -1,42 +1,41 @@
-export interface IProduct  {
-    productId: number
-    productSku: string
-    productName: string
-    productPrice: number
-    productShortName: string
-    productDescription: string
-    createdDate: string
-    deliveryTimeSpan: string
-    categoryId: number
-    productImageUrl: string
-    categoryName: string
-    quantity?: number
+export interface IProduct {
+  quantity: number;
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: {
+      rate: number;
+      count: number;
+  };
 }
 
 export interface APIResponseModel {
-  message: string
-  result: boolean
+  message: string;
+  result: boolean;
   data: any;
 }
 
 export interface CategoryModel {
-  categoryId: number
-  categoryName: string
-  parentCategoryId: number;
+  id: number;
+  name: string;
+  parentCategoryId?: number;
 }
 
 export class CartClass {
-  CartId: number;
-  CustId: number;
-  ProductId: number;
-  Quantity: number;
-  AddedDate: Date;
+  id: number;
+  customerId: number;
+  productId: number;
+  quantity: number;
+  addedDate: Date;
+
   constructor() {
-    this.AddedDate = new Date();
-    this.CartId= 0;
-    this.CustId= 0;
-    this.ProductId= 0;
-    this.Quantity= 0;
+      this.addedDate = new Date();
+      this.id = 0;
+      this.customerId = 0;
+      this.productId = 0;
+      this.quantity = 0;
   }
 }
-
